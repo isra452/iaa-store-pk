@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IAA Store.pk</title>
+<meta name="description" content="IAA premium collection — curated products with transparent selling prices.">
+<style>
+:root{--bg:#f7f4ee;--ink:#171717;--muted:#6f6a62;--card:#fff;--line:#e8e1d7;--accent:#b08a4b;--accent2:#7e6030}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#fff 0,#f7f4ee 40%,#eee8dc 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav{max-width:1200px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Georgia,serif;font-size:30px;letter-spacing:.18em;font-weight:700}.sub{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin-top:2px}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:14px}
+.hero{max-width:1200px;margin:0 auto;padding:78px 24px 54px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:var(--accent2);font-weight:700}
+h1{font:700 clamp(44px,7vw,82px)/.95 Georgia,serif;margin:16px 0 18px;max-width:760px}
+.hero p{font-size:17px;line-height:1.7;color:var(--muted);max-width:620px}
+.note{padding:24px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.58);box-shadow:0 18px 50px rgba(64,45,19,.06)}
+.note strong{display:block;font-family:Georgia,serif;font-size:22px;margin-bottom:8px}
+.shop{max-width:1200px;margin:auto;padding:10px 24px 80px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.search{flex:1;min-width:220px;padding:15px 18px;border-radius:999px;border:1px solid var(--line);background:white;outline:none;font-size:15px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;border-radius:999px;padding:12px 15px;cursor:pointer}
+.filter.active{background:var(--ink);color:white;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(44,31,12,.05);transition:.25s transform,.25s box-shadow}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(44,31,12,.11)}
+.img-wrap{aspect-ratio:1/1;background:#f2eee6;overflow:hidden}.img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:18px}.tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+h3{font:600 18px/1.25 Georgia,serif;margin:9px 0 15px;min-height:68px}
+.price{font-size:20px;font-weight:800;margin-bottom:14px}
+.buy{width:100%;padding:12px;border:0;border-radius:12px;background:var(--ink);color:white;font-weight:700;cursor:pointer}
+.buy:hover{background:#2a2a2a}
+footer{border-top:1px solid var(--line);padding:35px 24px;color:var(--muted);text-align:center;font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.show{display:flex}.modalbox{background:#fff;border-radius:24px;max-width:480px;width:100%;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.25)}
+.modalbox h2{font:700 30px Georgia,serif;margin:0 0 10px}.modalbox p{color:var(--muted);line-height:1.6}
+.close{float:right;border:0;background:#eee;border-radius:50%;width:34px;height:34px;cursor:pointer}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.nav{padding:15px}nav{display:none}.hero{padding-top:50px}h3{font-size:16px;min-height:80px}.card-body{padding:14px}}
+@media(max-width:460px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div><div class="logo">IAA</div><div class="sub">ISVERA • ARVÉLI • AVÉLIS</div></div>
+  <nav><a href="#collection">Collection</a><a href="#about">About</a></nav>
+</div></header>
+
+<section class="hero" id="about">
+  <div>
+    <div class="eyebrow">Independent • Curated • Premium</div>
+    <h1>Beautiful things, chosen with intention.</h1>
+    <p>Discover a refined collection of gift pieces, savings boxes, accessories and everyday finds — presented simply, with a premium shopping experience.</p>
+  </div>
+  <div class="note">
+    <strong>IAA — ISVERA • ARVÉLI • AVÉLIS</strong>
+    <div>Premium products, thoughtfully selected and presented.</div>
+  </div>
+</section>
+
+<section class="shop" id="collection">
+  <div class="tools">
+    <input class="search" id="search" placeholder="Search products..." oninput="render()">
+    <div class="filters" id="filters"></div>
+  </div>
+  <div class="grid" id="grid"><article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-673374-product-1.webp" alt="Umrah Savings Box Golden Black Wood 210k" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Umrah Savings Box Golden Black Wood 210k</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('Umrah Savings Box Golden Black Wood 210k', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift & Storage">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1936-273-721734-product-1.webp" alt="Black Square Storage Box for Home or Office" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift & Storage</span>
+        <h3>Black Square Storage Box for Home or Office</h3>
+        <div class="price">PKR 1,099</div>
+        <button class="buy" onclick="orderProduct('Black Square Storage Box for Home or Office', 1099)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-625576-product-1262.jpeg" alt="Umrah Saving Box Save 230000 PKR Black Wood" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Umrah Saving Box Save 230000 PKR Black Wood</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('Umrah Saving Box Save 230000 PKR Black Wood', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-620990-product-2.jpeg" alt="100,000 PKR Wooden Savings Box for Home Office" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>100,000 PKR Wooden Savings Box for Home Office</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('100,000 PKR Wooden Savings Box for Home Office', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-620967-product-1.jpeg" alt="500,000 PKR Savings Box Wooden Golden Acrylic" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>500,000 PKR Savings Box Wooden Golden Acrylic</h3>
+        <div class="price">PKR 1,699</div>
+        <button class="buy" onclick="orderProduct('500,000 PKR Savings Box Wooden Golden Acrylic', 1699)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-620963-product-1.jpg" alt="Golden Wooden Money Box for 50k PKR Savings" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Golden Wooden Money Box for 50k PKR Savings</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('Golden Wooden Money Box for 50k PKR Savings', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-673852-product-1.webp" alt="1200000 Rupee Wooden Saving Box for Home & Kids" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>1200000 Rupee Wooden Saving Box for Home & Kids</h3>
+        <div class="price">PKR 1,799</div>
+        <button class="buy" onclick="orderProduct('1200000 Rupee Wooden Saving Box for Home & Kids', 1799)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-621163-product-1.jpg" alt="30,000 PKR Birthday Savings Box for Kids Adults" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>30,000 PKR Birthday Savings Box for Kids Adults</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('30,000 PKR Birthday Savings Box for Kids Adults', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1855-273-677140-product-1.webp" alt="Black Gift Box for Watches & Jewelry Eid Wedding" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Boxes</span>
+        <h3>Black Gift Box for Watches & Jewelry Eid Wedding</h3>
+        <div class="price">PKR 1,099</div>
+        <button class="buy" onclick="orderProduct('Black Gift Box for Watches & Jewelry Eid Wedding', 1099)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-671505-product-1.webp" alt="Laptop Saving Box 50,000 Dollar Wooden Grid Display" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Laptop Saving Box 50,000 Dollar Wooden Grid Display</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('Laptop Saving Box 50,000 Dollar Wooden Grid Display', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1936-273-721735-product-1.webp" alt="Black Minimalist Gift Box for Elegant Presentation" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Boxes</span>
+        <h3>Black Minimalist Gift Box for Elegant Presentation</h3>
+        <div class="price">PKR 1,099</div>
+        <button class="buy" onclick="orderProduct('Black Minimalist Gift Box for Elegant Presentation', 1099)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/2145-273-721110-product-1.webp" alt="Black Minimalist Wood Gift Box 1 Pc" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Boxes</span>
+        <h3>Black Minimalist Wood Gift Box 1 Pc</h3>
+        <div class="price">PKR 1,099</div>
+        <button class="buy" onclick="orderProduct('Black Minimalist Wood Gift Box 1 Pc', 1099)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/2449-273-721108-product-1.webp" alt="Elegant Black Wood Watch Box for Men" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Boxes</span>
+        <h3>Elegant Black Wood Watch Box for Men</h3>
+        <div class="price">PKR 1,199</div>
+        <button class="buy" onclick="orderProduct('Elegant Black Wood Watch Box for Men', 1199)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/2071-273-691281-product-1.webp" alt="Stylish Wooden Money Box for Umrah Savings Tracker" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Stylish Wooden Money Box for Umrah Savings Tracker</h3>
+        <div class="price">PKR 1,899</div>
+        <button class="buy" onclick="orderProduct('Stylish Wooden Money Box for Umrah Savings Tracker', 1899)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1855-273-677141-product-1.webp" alt="Black Hardboard Gift Box for Watches & Jewelry" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Boxes</span>
+        <h3>Black Hardboard Gift Box for Watches & Jewelry</h3>
+        <div class="price">PKR 1,099</div>
+        <button class="buy" onclick="orderProduct('Black Hardboard Gift Box for Watches & Jewelry', 1099)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-673503-product-1262.webp" alt="Wooden Qurbani Saving Box Brown Gold Eid Gift" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Wooden Qurbani Saving Box Brown Gold Eid Gift</h3>
+        <div class="price">PKR 1,599</div>
+        <button class="buy" onclick="orderProduct('Wooden Qurbani Saving Box Brown Gold Eid Gift', 1599)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-628907-product-1262.jpg" alt="Wooden Saving Box 800,000 Dollar Clear Chart" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>Wooden Saving Box 800,000 Dollar Clear Chart</h3>
+        <div class="price">PKR 1,499</div>
+        <button class="buy" onclick="orderProduct('Wooden Saving Box 800,000 Dollar Clear Chart', 1499)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Savings Boxes">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1261-273-628904-product-1262.jpg" alt="10 Lakh Saving Box Brown Wood Acrylic 9x12x3" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Savings Boxes</span>
+        <h3>10 Lakh Saving Box Brown Wood Acrylic 9x12x3</h3>
+        <div class="price">PKR 1,899</div>
+        <button class="buy" onclick="orderProduct('10 Lakh Saving Box Brown Wood Acrylic 9x12x3', 1899)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Keychains">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/972-185-515200-product-1.png" alt="Pack Of 2 Leather KeyChain Brown Black" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Keychains</span>
+        <h3>Pack Of 2 Leather KeyChain Brown Black</h3>
+        <div class="price">PKR 999</div>
+        <button class="buy" onclick="orderProduct('Pack Of 2 Leather KeyChain Brown Black', 999)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Gift Packaging">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1322-273-452775-product-1.jpg" alt="Small Kraft Boxes for Jewelry & Gifts Pakistan" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Gift Packaging</span>
+        <h3>Small Kraft Boxes for Jewelry & Gifts Pakistan</h3>
+        <div class="price">PKR 1,299</div>
+        <button class="buy" onclick="orderProduct('Small Kraft Boxes for Jewelry & Gifts Pakistan', 1299)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Keychains">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/691-185-275206-product-1.jpeg" alt="Cute Glass Keychains with Figurines for Girls" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Keychains</span>
+        <h3>Cute Glass Keychains with Figurines for Girls</h3>
+        <div class="price">PKR 899</div>
+        <button class="buy" onclick="orderProduct('Cute Glass Keychains with Figurines for Girls', 899)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Fitness Accessories">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/163-19844-112193-product-1.jpg" alt="Knee Support Bandage Nylon Rubber Green Black Adjustable Sports Use" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Fitness Accessories</span>
+        <h3>Knee Support Bandage Nylon Rubber Green Black Adjustable Sports Use</h3>
+        <div class="price">PKR 1,699</div>
+        <button class="buy" onclick="orderProduct('Knee Support Bandage Nylon Rubber Green Black Adjustable Sports Use', 1699)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Keychains">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/221-14144-85543-product-1.jpeg" alt="Tom and Jerry Keychain Set Rubber Stainless Steel" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Keychains</span>
+        <h3>Tom and Jerry Keychain Set Rubber Stainless Steel</h3>
+        <div class="price">PKR 899</div>
+        <button class="buy" onclick="orderProduct('Tom and Jerry Keychain Set Rubber Stainless Steel', 899)">Order Now</button>
+      </div>
+    </article>
+<article class="card" data-category="Women's Clothing">
+      <div class="img-wrap"><img src="https://static.IAA.app/pakistan/thumbnails/products/1-2-7-product-1.jpeg" alt="Asim Jofa 3-Piece Navy Blue Linen Embroidered Suit with Bamber Chiffon Dupatta" loading="lazy"></div>
+      <div class="card-body">
+        <span class="tag">Women's Clothing</span>
+        <h3>Asim Jofa 3-Piece Navy Blue Linen Embroidered Suit with Bamber Chiffon Dupatta</h3>
+        <div class="price">PKR 3,999</div>
+        <button class="buy" onclick="orderProduct('Asim Jofa 3-Piece Navy Blue Linen Embroidered Suit with Bamber Chiffon Dupatta', 3999)">Order Now</button>
+      </div>
+    </article></div>
+</section>
+
+<footer>© 2026 IAA — ISVERA • ARVÉLI • AVÉLIS. All rights reserved.</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modalbox">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2>Order Request</h2>
+    <p id="orderText"></p>
+    <p><strong>Next step:</strong> Connect this button to your preferred WhatsApp, checkout, or order form before publishing.</p>
+  </div>
+</div>
+
+<script>
+const cats=[...new Set([...document.querySelectorAll('.card')].map(x=>x.dataset.category))];
+const filters=document.getElementById('filters');
+filters.innerHTML='<button class="filter active" onclick="setCat(this,\'All\')">All</button>'+cats.map(c=>`<button class="filter" onclick="setCat(this,'${c}')">${c}</button>`).join('');
+let active='All';
+function setCat(btn,cat){active=cat;document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function render(){
+ const q=document.getElementById('search').value.toLowerCase();
+ document.querySelectorAll('.card').forEach(card=>{
+  const okCat=active==='All'||card.dataset.category===active;
+  const okText=card.innerText.toLowerCase().includes(q);
+  card.style.display=okCat&&okText?'':'none';
+ });
+}
+function orderProduct(name,price){document.getElementById('orderText').textContent=`You selected “${name}” at PKR ${price.toLocaleString()}.`;document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+</script>
+</body>
+</html>
